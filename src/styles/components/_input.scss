@@ -1,0 +1,21 @@
+.input-field {
+  padding: 0.4rem;
+
+  input {
+    border: none;
+    border-bottom: 1px solid #C6C6C6;
+    width: -webkit-fill-available;
+    margin-bottom: 0.6rem;
+  }
+
+  select, textarea {
+    border-radius: 0.4rem;
+    padding: 0.8rem 0.6rem;
+    width: 100%;
+  }
+
+  label {
+    font-weight: 500;
+    display: block;
+  }
+}
