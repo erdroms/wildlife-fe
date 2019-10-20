@@ -18,7 +18,9 @@ const Dashboard = (props) => {
     <div className="container">
       <div className="row">
         <div className="col text-center">
-          <ButtonLink to="/pickup-request" buttonClass="primary" text="Add new pickup request" className="w-100" />
+          <ButtonLink to="/pickup-request" className="btn-primary w-100">
+            Add new pickup request
+          </ButtonLink>
         </div>
       </div>
       <div className="mt-4">

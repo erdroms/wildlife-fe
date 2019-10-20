@@ -4,8 +4,10 @@ import { Link as RouterLink } from "react-router-dom";
 /**
  * Link that looks like a button, with a 'to' property
  */
-export const ButtonLink = ({ className = "", ...rest }) => (
-  <RouterLink className={`btn btn-link ${className}`} {...rest} />
+export const ButtonLink = ({ className = "", to, children }) => (
+  <RouterLink className={`btn btn-link ${className}`} to={to}>
+    {children}
+  </RouterLink>
 );
 
 const Button = ({ children, type = "button", buttonClass = "", className, onClick, to, ...rest }) => (
