@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Field, Formik } from "formik";
 import { API } from "aws-amplify";
+import { useHistory } from "react-router-dom";
 
 import { Icon, LinkButton } from "../common";
 
@@ -78,8 +79,9 @@ const Volunteer = ({ volunteer, onChange, selected }) => (
 );
 
 const PickupRequest = () => {
-  const [addDescription] = useState(false);
+  const [addDescription, setAddDescription] = useState(false);
   const [volunteers, setVolunteers] = useState(TEST_VOLUNTEERS);
+  let history = useHistory();
 
   // useEffect(() => {
   //   API.get("wildlife-admin", "/pickups").then((res) => setPickupRequests(res));
@@ -99,6 +101,7 @@ const PickupRequest = () => {
             .then((res) => {
               console.log(res);
               actions.setSubmitting(false);
+              history.push("/");
             })
             .catch((err) => {
               throw new Error(err);
@@ -126,7 +129,7 @@ const PickupRequest = () => {
                   { id: 2, value: "abandoned", text: "Abandoned Animal" },
                 ]}
               />
-              <LinkButton className="ml-2" onClick={() => this.setState({ addDescription: true })}>
+              <LinkButton className="ml-2" onClick={() => setAddDescription(!addDescription)}>
                 Add pickup description
               </LinkButton>
               {addDescription && (
