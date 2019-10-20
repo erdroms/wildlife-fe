@@ -1,19 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Amplify from "aws-amplify";
-import { createStore } from "redux";
+// import { createStore } from "redux";
 import * as history from "history";
 import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
-import rootReducer from "./reducers";
+// import rootReducer from "./store";
 import config from "./config";
 
 import "./assets/fonts/icomoon/style.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./Wildlife.css";
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+// const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 // const history = history.createBrowserHistory();
 
 Amplify.configure({
@@ -40,5 +40,5 @@ Amplify.configure({
   },
 });
 
-ReactDOM.render(<App history={history.createBrowserHistory()} store={store} />, document.getElementById("root"));
+ReactDOM.render(<App history={history.createBrowserHistory()} /*store={store}*/ />, document.getElementById("root"));
 registerServiceWorker();

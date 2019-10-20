@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Router, Route, Switch, Link } from "react-router-dom";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import { Auth } from "aws-amplify";
 
 import Login from "./components/views/Login";
 import Header from "./components/Header";
 import Dashboard from "./components/views/Dashboard";
-import PickupRequest from "./components/views/PickupRequest";
+import PickupRequestForm from "./components/views/PickupRequestForm";
 
 class App extends Component {
   state = {
@@ -38,7 +38,7 @@ class App extends Component {
   };
 
   render() {
-    const { history, store } = this.props;
+    const { history /*store*/ } = this.props;
 
     const childProps = {
       isAuthenticated: this.state.isAuthenticated,
@@ -47,29 +47,29 @@ class App extends Component {
 
     return (
       !this.state.isAuthenticating && (
-        <Provider store={store} history={history}>
-          <Router history={history}>
-            <div className="App">
-              {!this.state.isAuthenticated ? (
-                <div>
-                  <Link to="/signup">Signup</Link>
-                  <Link to="/login">Login</Link>
-                </div>
-              ) : (
-                <Link to="/login" onClick={this.handleLogout}>
-                  Logout
-                </Link>
-              )}
+        // <Provider store={store} history={history}>
+        <Router history={history}>
+          <div className="App">
+            {!this.state.isAuthenticated ? (
+              <div>
+                <Link to="/signup">Signup</Link>
+                <Link to="/login">Login</Link>
+              </div>
+            ) : (
+              <Link to="/login" onClick={this.handleLogout}>
+                Logout
+              </Link>
+            )}
 
-              <Header />
-              <Switch>
-                <Route exact path="/" component={Dashboard} />
-                <Route path="/login" exact render={(props) => <Login {...props} {...childProps} />} />
-                <Route exact path="/pickup-request" component={PickupRequest} />
-              </Switch>
-            </div>
-          </Router>
-        </Provider>
+            <Header />
+            <Switch>
+              <Route exact path="/" component={Dashboard} />
+              <Route path="/login" exact render={(props) => <Login {...props} {...childProps} />} />
+              <Route exact path="/pickup-request" component={PickupRequestForm} />
+            </Switch>
+          </div>
+        </Router>
+        // </Provider>
       )
     );
   }
