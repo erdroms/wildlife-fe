@@ -1,7 +1,6 @@
-import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form'
-import pickupRequest from './pickupRequest';
+import { combineReducers } from "redux";
+import volunteers from "./volunteers";
 
-const rootReducer = combineReducers({ form: formReducer, pickupRequest });
+const rootReducer = combineReducers({ volunteers });
 
 export default rootReducer;

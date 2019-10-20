@@ -3,12 +3,13 @@
 
   input {
     border: none;
-    border-bottom: 1px solid #C6C6C6;
-    width: -webkit-fill-available;
+    border-bottom: 1px solid #c6c6c6;
+    width: stretch;
     margin-bottom: 0.6rem;
   }
 
-  select, textarea {
+  select,
+  textarea {
     border-radius: 0.4rem;
     padding: 0.8rem 0.6rem;
     width: 100%;
