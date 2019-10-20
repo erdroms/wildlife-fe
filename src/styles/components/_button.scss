@@ -6,18 +6,15 @@
   font-size: 1.2rem;
   font-weight: 600;
   &.btn-primary {
-    background-color: #E57124 !important;
-    border-color: #E57124 !important;
+    background-color: #e57124 !important;
+    border-color: #e57124 !important;
   }
   &.btn-secondary {
-    background-color: #3F3F3F !important;
-    border-color: #3F3F3F !important;
+    background-color: #3f3f3f !important;
+    border-color: #3f3f3f !important;
   }
   &.btn-link {
-    color: $link;
-    padding: 0;
-    text-transform: none;
-    text-decoration: underline;
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
   }
-
 }

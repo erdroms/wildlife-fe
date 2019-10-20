@@ -1,0 +1,9 @@
+.link {
+  &.link-btn {
+    color: $link;
+    padding: 0;
+    border: 0;
+    background: none;
+    text-decoration: underline;
+  }
+}

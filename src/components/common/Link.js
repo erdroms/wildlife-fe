@@ -1,14 +1,19 @@
-import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
-export const ButtonLink = ({ className, buttonClass, ...rest }) => (
-  <WCLink className={`btn btn-link ${buttonClass ? `btn-${buttonClass}` : ''} ${className}`} {...rest} />
-)
-
-const WCLink = ({ text, type, className, to, ...rest }) => (
-  <Link className={className} to={to}>
-    {text}
-  </Link>
+/**
+ * Button that looks like a link, with an 'onClick' property
+ */
+export const LinkButton = ({ className = "", onClick, type, children }) => (
+  <button type={type} className={`link link-btn ${className}`} onClick={onClick}>
+    {children}
+  </button>
 );
 
-export default WCLink;
+const Link = ({ text, type, className, onClick, to, ...rest }) => (
+  <RouterLink className={className} to={to} {...rest}>
+    {text}
+  </RouterLink>
+);
+
+export default Link;

@@ -1,3 +1,3 @@
-export { default as Button } from './Button';
-export { default as Link, ButtonLink } from './Link';
-export { default as Icon } from './Icon';
+export { default as Button, ButtonLink } from "./Button";
+export { default as Link, LinkButton } from "./Link";
+export { default as Icon } from "./Icon";
