@@ -23,5 +23,5 @@ yarn-error.log*
 # TODO list
 todos.txt
 
-# Outdate files
-/_outdated
+# Outdated files
+**/_outdated
