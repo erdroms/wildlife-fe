@@ -7,6 +7,7 @@ import Login from "./components/views/Login";
 import Header from "./components/Header";
 import Dashboard from "./components/views/Dashboard";
 import PickupRequestForm from "./components/views/PickupRequestForm";
+import PickupDetails from "./components/views/PickupDetails";
 
 class App extends Component {
   state = {
@@ -66,6 +67,7 @@ class App extends Component {
               <Route exact path="/" component={Dashboard} />
               <Route path="/login" exact render={(props) => <Login {...props} {...childProps} />} />
               <Route exact path="/pickup-request" component={PickupRequestForm} />
+              <Route exact path="/pickup-details/:id" component={PickupDetails} />
             </Switch>
           </div>
         </Router>

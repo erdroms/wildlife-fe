@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "./common";
+import { Button, ButtonLink } from "./common";
 
 const PickupRequest = ({ details }) => {
   const {
@@ -11,7 +11,7 @@ const PickupRequest = ({ details }) => {
     // firstName,
     // lastName,
     pickupDescription,
-    // pickupId,
+    pickupId,
     pickupType,
     // userId,
     // volunteers,
@@ -32,9 +32,9 @@ const PickupRequest = ({ details }) => {
         <Button buttonClass="primary" className="mr-2 w-100">
           Initiate Pickup
         </Button>
-        <Button buttonClass="secondary" className="w-100">
+        <ButtonLink to={`/pickup-details/${pickupId}`} className="btn-secondary w-100">
           View Details
-        </Button>
+        </ButtonLink>
       </div>
     </div>
   );
